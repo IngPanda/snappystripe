@@ -1,5 +1,5 @@
 <?php
-namespace DataLive\snappyStripe;
+namespace sataLive\snappystripe;
  
 class Config
 {

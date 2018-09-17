@@ -1,6 +1,6 @@
 <?php
 
-namespace DataLive\snappyStripe\console;
+namespace dataLive\snappystripe\console;
 
 use Illuminate\Console\Command;
 
@@ -27,7 +27,7 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        $this->loadMigrationsFrom(__DIR__ . 'vendor/DataLive/snappyStripe/database/');
+        $this->loadMigrationsFrom(__DIR__ . 'vendor/datalive/snappystripe/database/');
         Artisan::call('migrate', array('--path' => 'app/migrations'));
     }
 }

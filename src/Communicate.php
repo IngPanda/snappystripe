@@ -1,6 +1,6 @@
 
 <?php
-namespace DataLive\snappyStripe;
+namespace datalive\snappystripe;
  
 use Cartalyst\Stripe\Stripe;
  
