@@ -1,0 +1,25 @@
+{
+    "name": "datalive/snappystripe",
+    "description": "php component to connect applications with stripe",
+    "type": "package",
+    "license": "MIT",
+    "keywords": ["snappyStripe","stripe","snappyLine"],
+    "authors": [
+        {
+            "name": "Samuel Useche",
+            "email": "samueluseche87@gmail.com"
+        }
+    ],
+        "require": {
+            "php": "^7.1.3",
+            "cartalyst/stripe-laravel": "8.0.*"
+       }, 
+       "require-dev": { 
+              "phpunit/phpunit": "^7"
+       },
+       "autoload": { 
+              "psr-4": { 
+                     "DataLive\\snappyStripe\\": "src"
+              } 
+       } 
+}
