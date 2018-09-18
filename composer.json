@@ -19,7 +19,7 @@
        },
        "autoload": { 
               "psr-4": { 
-                     "suseche\\WalletStripe\\": "src"
+                     "suseche\\walletstripe\\": "src"
               } 
        },
       "extra": {
