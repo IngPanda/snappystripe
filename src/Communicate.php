@@ -1,6 +1,6 @@
 
 <?php
-namespace datalive\snappystripe;
+namespace suseche\WalletStripe;
  
 use Cartalyst\Stripe\Stripe;
  

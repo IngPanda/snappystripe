@@ -1,9 +1,9 @@
 {
-    "name": "datalive/snappystripe",
+    "name": "suseche/WalletStripe",
     "description": "php component to connect applications with stripe",
     "type": "package",
     "license": "MIT",
-    "keywords": ["snappyStripe","stripe","snappyLine"],
+    "keywords": ["wallet","stripe","balance"],
     "authors": [
         {
             "name": "Samuel Useche",
@@ -19,7 +19,14 @@
        },
        "autoload": { 
               "psr-4": { 
-                     "dataLive\\snappystripe\\": "src"
+                     "suseche\\WalletStripe\\": "src"
               } 
-       } 
+       },
+      "extra": {
+        "laravel": {
+            "providers": [
+                "suseche\\WalletStripe\\WalletServiceProvider"
+            ]
+        }
+      },
 }

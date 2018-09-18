@@ -1,6 +1,6 @@
 <?php
 
-namespace dataLive\snappystripe\console;
+namespace suseche\WalletStripe\Console;
 
 use Illuminate\Console\Command;
 

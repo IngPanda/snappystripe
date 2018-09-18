@@ -1,5 +1,5 @@
 <?php
-namespace sataLive\snappystripe;
+namespace suseche\WalletStripe;
  
 class Config
 {
