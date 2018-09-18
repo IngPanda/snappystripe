@@ -1,6 +1,6 @@
 
 <?php
-namespace suseche\WalletStripe;
+namespace suseche\walletstripe;
  
 use Cartalyst\Stripe\Stripe;
  

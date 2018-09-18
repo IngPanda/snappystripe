@@ -1,5 +1,5 @@
 {
-    "name": "suseche/WalletStripe",
+    "name": "suseche/walletstripe",
     "description": "php component to connect applications with stripe",
     "type": "package",
     "license": "MIT",
@@ -25,7 +25,7 @@
       "extra": {
         "laravel": {
             "providers": [
-                "suseche\\WalletStripe\\WalletServiceProvider"
+                "suseche\\walletstripe\\WalletServiceProvider"
             ]
         }
       }

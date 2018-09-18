@@ -1,5 +1,5 @@
 <?php
-namespace suseche\WalletStripe;
+namespace suseche\walletstripe;
  
 class Config
 {

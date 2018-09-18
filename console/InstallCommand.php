@@ -1,6 +1,6 @@
 <?php
 
-namespace suseche\WalletStripe\Console;
+namespace suseche\walletstripe\Console;
 
 use Illuminate\Console\Command;
 
