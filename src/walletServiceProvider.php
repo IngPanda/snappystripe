@@ -20,9 +20,9 @@ class WalletServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->registerMigrations();
 
-            $this->commands([
+            /*$this->commands([
                 Console\InstallCommand::class,
-            ]);
+            ]);*/
         }
     }
 
