@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateStripeConfig extends Migration {
+class CreateConfigStripeTable extends Migration {
 
 	/**
 	 * Run the migrations.
