@@ -19,7 +19,6 @@ class CreateConfigStripeTable extends Migration {
 				$table->increments('id');
 				$table->integer('customer_id')->index();
 				$table->integer('account_id')->nullable();
-				$table->integer('user_id')->nullable();
 				$table->timestamps();
 			});
 		}
