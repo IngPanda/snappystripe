@@ -181,7 +181,7 @@ class WalletStripe
 
         $card = $stripe->cards()->delete($customer_id,$card_id);
 
-        return $card;
+        return true;
           
        } catch (\Cartalyst\Stripe\Exception\NotFoundException $e) {
          return $this->error_M1;          
