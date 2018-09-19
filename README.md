@@ -77,10 +77,10 @@ Methods
 -code 
 	---------
 
-	``` php
-			$wallet = new WalletStripe;
-	    	$customer = $wallet->createConstumer($user->id);
-	```
+``` php
+		$wallet = new WalletStripe;
+    	$customer = $wallet->createConstumer($user->id);
+```
 
 - params
 	---------
@@ -96,10 +96,10 @@ Methods
 -code 
 	---------
 
-	``` php
-			$wallet = new WalletStripe;
-	    	$customer = $wallet->getCostumerId($user->id);
-	```
+``` php
+		$wallet = new WalletStripe;
+    	$customer = $wallet->getCostumerId($user->id);
+```
 
 - params
 	---------
@@ -115,10 +115,10 @@ Methods
 -code 
 	---------
 
-	``` php
-			$wallet = new WalletStripe;
-	    	$customer = $wallet->getDataCustomer($user->id);
-	```
+``` php
+		$wallet = new WalletStripe;
+    	$customer = $wallet->getDataCustomer($user->id);
+```
 
 - params
 	---------
@@ -134,10 +134,10 @@ Methods
 -code 
 	---------
 
-	``` php
-			$wallet = new WalletStripe;
-	    	$customer = $wallet->createCreditCard($user->id,$token_card);
-	```
+``` php
+		$wallet = new WalletStripe;
+    	$customer = $wallet->createCreditCard($user->id,$token_card);
+```
 
 - params
 	---------
@@ -154,10 +154,10 @@ Methods
 -code 
 	---------
 
-	``` php
-			$wallet = new WalletStripe;
-	    	$customer = $wallet->getCreditCards($user->id,$token_card);
-	```
+``` php
+		$wallet = new WalletStripe;
+    	$customer = $wallet->getCreditCards($user->id,$token_card);
+```
 
 - params
 	---------
