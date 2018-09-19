@@ -27,7 +27,44 @@ Methods
 ---------
 
 - createConstumer
+
+	-code 
+	---------
+
+	``` php
+			$wallet = new WalletStripe;
+	    	$customer = $wallet->createConstumer($user->id);
+	```
+
+	- params
+	---------
+
+	- account_id: Local identifier of the account to which you want to link the customer stripe
+
+	- return 
+	---------
+	- all customer data stored in stripe
+
 - getCostumerId
+
+	-code 
+	---------
+
+	``` php
+			$wallet = new WalletStripe;
+	    	$customer = $wallet->getCostumerId($user->id);
+	```
+
+	- params
+	---------
+
+	- account_id: Local identifier of the account.
+
+	- return 
+	---------
+	- the customer identifier in stripe
+
+
 - getDataCustomer
 - createCreditCard
 - getCreditCards
@@ -36,9 +73,27 @@ Methods
 - generateTokenCreditCard
 - loadCharge
 
-Methods
+Usage
 ---------
 
+
+``` php
+
+namespace App\Http\Controllers;
+
+
+use suseche\walletstripe\WalletStripe;
+
+class UserController extends Controller
+{
+    public function createCustomer(Request $request)
+    {
+    	$wallet = new WalletStripe;
+    	$customer = $wallet->createConstumer($user->id);
+    }
+}
+
+```
 Requirements
 ------------
 
