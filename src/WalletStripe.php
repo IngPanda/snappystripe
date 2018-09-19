@@ -53,13 +53,20 @@ class WalletStripe
         if (!Schema::hasTable('stripe_config_data')){
             return $this->error_M5;
         }
+        
+        $user = DB::table('stripe_config_data')->where('account_id',$account_id)->first();
 
-        $customer = $this->stripe->customers()->create([
+        if(empty($user)){
+          $customer = $this->stripe->customers()->create([
               'description' => getenv('APP_NAME').'_'.App::environment().'_'.$account_id,
               'metadata' => ['account_id' => $account_id]
           ]);
 
-        DB::table('stripe_config_data')->insert(["customer_id"=>$customer['id'],"account_id" =>$account_id ]);
+          DB::table('stripe_config_data')->insert(["customer_id"=>$customer['id'],"account_id" =>$account_id ]);
+        }
+        else{
+          $customer = $this->getDataCustomer($account_id);
+        }       
 
         return $customer;
 
