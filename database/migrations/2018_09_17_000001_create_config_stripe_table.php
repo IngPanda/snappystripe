@@ -17,7 +17,7 @@ class CreateConfigStripeTable extends Migration {
 			Schema::create('stripe_config_data', function(Blueprint $table)
 			{
 				$table->increments('id');
-				$table->integer('customer_id')->index();
+				$table->string('customer_id')->index();
 				$table->integer('account_id')->nullable();
 				$table->timestamps();
 			});

@@ -3,6 +3,7 @@
 namespace suseche\walletstripe;
 
 use Cartalyst\Stripe\Stripe;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
  
 class WalletStripe
@@ -62,7 +63,7 @@ class WalletStripe
 
         if(empty($user)){
           $customer = $this->stripe->customers()->create([
-              'description' => getenv('APP_NAME').'_'.App::environment().'_'.$account_id,
+              'description' => getenv('APP_NAME').'_'.getenv('APP_ENV').'_'.$account_id,
               'metadata' => ['account_id' => $account_id]
           ]);
 
