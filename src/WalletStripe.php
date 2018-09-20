@@ -31,6 +31,10 @@ class WalletStripe
        return $bool; 
    }
 
+   public function getStripeInstance(){
+    return $this->stripe;
+   }
+
    /** Customers */
 
    public function getCostumerId($account_id){
@@ -283,7 +287,66 @@ class WalletStripe
                 'description' => $description,
                 'metadata' => $metadata
           ]);
-          return $charge["id"];
+          return $charge;
+          
+       } catch (\Cartalyst\Stripe\Exception\NotFoundException $e) {
+         return $this->error_M1;          
+        }
+        catch (\Cartalyst\Stripe\Exception\BadRequestException $e) {
+          return $this->error_M2;          
+        }
+        catch (\Cartalyst\Stripe\Exception\InvalidRequestException $e) {
+          return $this->error_M2;          
+        }
+        catch (\Cartalyst\Stripe\Exception\CardErrorException $e) {
+          return $this->error_M3;          
+        }
+        catch (\Cartalyst\Stripe\Exception\NotFoundException $e) {
+         return $this->error_M1;          
+        } 
+   }
+
+   public function getCharge($customer_id,$charge_id = false){
+     try{
+
+          $customer_id = $this->getCostumerId($account_id);
+
+          if(!$charge_id){
+            $charges = $stripe->charges()->all(['customer'=>$customer_id]);
+          }
+          else{
+            $charges = $stripe->charges()->find($charge_id);
+          }
+          return $charges;
+          
+       } catch (\Cartalyst\Stripe\Exception\NotFoundException $e) {
+         return $this->error_M1;          
+        }
+        catch (\Cartalyst\Stripe\Exception\BadRequestException $e) {
+          return $this->error_M2;          
+        }
+        catch (\Cartalyst\Stripe\Exception\InvalidRequestException $e) {
+          return $this->error_M2;          
+        }
+        catch (\Cartalyst\Stripe\Exception\CardErrorException $e) {
+          return $this->error_M3;          
+        }
+        catch (\Cartalyst\Stripe\Exception\NotFoundException $e) {
+         return $this->error_M1;          
+        } 
+   }
+
+
+
+   public function refundCharge($charge_id){
+
+      try{
+
+          $customer_id = $this->getCostumerId($account_id);
+
+          $refund = $stripe->refunds()->create($charge_id);
+
+          return $charge;
           
        } catch (\Cartalyst\Stripe\Exception\NotFoundException $e) {
          return $this->error_M1;          

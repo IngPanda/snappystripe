@@ -188,10 +188,105 @@ Methods
 	
 	- Boolean response of the operation
 
-	
+
 ##updateCreditCard
+
+
+-code 
+	
+
+``` php
+		$wallet = new WalletStripe;
+    	$customer = $wallet->updateCreditCard($user->id,$card_id,[
+		    'name'          => 'John Doe',
+		    'address_line1' => 'Example Street 1',
+			]);
+```
+
+- params
+	
+
+	- account_id: Local identifier of the account.
+	- $card_id: identifier of the credit card in stripe
+	- $data:  Array with a single data that can be modified from a credit card
+
+``` php
+$data = [
+    'name'          => 'John Doe',
+    'address_line1' => 'Example Street 1',
+    'address_line2' => 'Example Street 2',
+    'address_state' => 'Texas',
+    'address_zip' 	=> '55555',
+    'exp_month' 	=> '03',
+    'exp_year' 	=> '2025',
+
+
+]
+```
+
+- return 
+	
+	- all credit card data stored in stripe
+
+
 ##generateTokenCreditCard
+
+Note: this method should only be used for testing purposes since its use in production may result in misuse of data that is sensitive and vulnerable to scams or fraud
+
+-code 
+	
+
+``` php
+		$wallet = new WalletStripe;
+    	$customer = $wallet->generateTokenCreditCard($user->id,[
+                  'number'    => '4242424242424242',
+                  'exp_month' => 10,
+                  'cvc'       => 314,
+                  'exp_year'  => 2020,
+              ]);
+```
+
+- params
+	
+
+	- account_id: Local identifier of the account.
+	- $data:  array with credit card data
+
+	Note: if the fix is not sent within the function a test token with test data is created
+
+``` php
+			$data =[
+                  'number'    => '4242424242424242',
+                  'exp_month' => 10,
+                  'cvc'       => 314,
+                  'exp_year'  => 2020,
+              ]
+```
+
+- return 
+	
+	- token credit card
+
 ##loadCharge
 
+-code 
+	
 
+``` php
+		$wallet = new WalletStripe;
+    	$customer = $wallet->loadCharge($account_id,$amount,$description,$metadata,$currency)
+```
+
+- params
+	
+
+	- account_id: Local identifier of the account.
+	- $amount:  amount of the charge
+	- $description: description of the charge
+	- $metadata: array with additional caharge data
+	- $currency: (Default value if not sent is USD)
+
+- return 
+	
+	- all charge data stored in stripe
 
