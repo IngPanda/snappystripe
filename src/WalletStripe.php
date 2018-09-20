@@ -250,7 +250,7 @@ class WalletStripe
           }
 
           $token = $stripe->tokens()->create([
-              'card' => $datCC;
+              'card' => $datCC
           ]);
 
           return $token;
