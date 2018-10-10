@@ -69,8 +69,8 @@ class UserController extends Controller
 * __createConstumer__
 
 ``` php
-		$wallet = new WalletStripe;
-    	$customer = $wallet->createConstumer($user->id);
+$wallet = new WalletStripe;
+$customer = $wallet->createConstumer($user->id);
 ```
 
 1. __params__
@@ -84,8 +84,8 @@ class UserController extends Controller
 * __getCostumerId__
 
 ``` php
-		$wallet = new WalletStripe;
-		$customer = $wallet->getCostumerId($user->id);
+$wallet = new WalletStripe;
+$customer = $wallet->getCostumerId($user->id);
 ```
 
 1. __params__
@@ -100,8 +100,8 @@ class UserController extends Controller
 * __getDataCustomer__
 
 ``` php
-		$wallet = new WalletStripe;
-    	$customer = $wallet->getDataCustomer($user->id);
+$wallet = new WalletStripe;
+$customer = $wallet->getDataCustomer($user->id);
 ```
 
 1. __params__
@@ -116,8 +116,8 @@ class UserController extends Controller
 * __createCreditCard__
 
 ``` php
-		$wallet = new WalletStripe;
-    	$customer = $wallet->createCreditCard($user->id,$token_card);
+$wallet = new WalletStripe;
+$customer = $wallet->createCreditCard($user->id,$token_card);
 ```
 
 1. __params__
@@ -132,8 +132,8 @@ class UserController extends Controller
 * __getCreditCards__
 
 ``` php
-		$wallet = new WalletStripe;
-    	$customer = $wallet->getCreditCards($user->id,$card_id);
+$wallet = new WalletStripe;
+$customer = $wallet->getCreditCards($user->id,$card_id);
 ```
 
 1. __params__
@@ -147,8 +147,8 @@ class UserController extends Controller
 * __deleteCreditCard__
 
 ``` php
-		$wallet = new WalletStripe;
-    	$customer = $wallet->deleteCreditCard($user->id,$card_id);
+$wallet = new WalletStripe;
+$customer = $wallet->deleteCreditCard($user->id,$card_id);
 ```
 
 1. __params__
@@ -164,11 +164,11 @@ class UserController extends Controller
 * __updateCreditCard__
 
 ``` php
-		$wallet = new WalletStripe;
-    	$customer = $wallet->updateCreditCard($user->id,$card_id,[
-		    'name'          => 'John Doe',
-		    'address_line1' => 'Example Street 1',
-			]);
+$wallet = new WalletStripe;
+$customer = $wallet->updateCreditCard($user->id,$card_id,[
+    'name'          => 'John Doe',
+    'address_line1' => 'Example Street 1',
+    ]);
 ```
 
 1. __params__
@@ -178,15 +178,15 @@ class UserController extends Controller
 	- $data:  Array with a single data that can be modified from a credit card
 
 ``` php
-		$data = [
-    		'name'          => 'John Doe',
-    		'address_line1' => 'Example Street 1',
-    		'address_line2' => 'Example Street 2',
-    		'address_state' => 'Texas',
-    		'address_zip' 	=> '55555',
-    		'exp_month' 	=> '03',
-    		'exp_year' 	    => '2025',
-		]
+$data = [
+    'name'          => 'John Doe',
+    'address_line1' => 'Example Street 1',
+    'address_line2' => 'Example Street 2',
+    'address_state' => 'Texas',
+    'address_zip' 	=> '55555',
+    'exp_month' 	=> '03',
+    'exp_year' 	    => '2025',
+    ]
 ```
 
 2. __return__ 
@@ -199,13 +199,13 @@ class UserController extends Controller
 _Note: this method should only be used for testing purposes since its use in production may result in misuse of data that is sensitive and vulnerable to scams or fraud_
 
 ``` php
-		$wallet = new WalletStripe;
-    	$customer = $wallet->generateTokenCreditCard($user->id,[
-                  'number'    => '4242424242424242',
-                  'exp_month' => 10,
-                  'cvc'       => 314,
-                  'exp_year'  => 2020,
-              ]);
+$wallet = new WalletStripe;
+$customer = $wallet->generateTokenCreditCard($user->id,[
+    'number'    => '4242424242424242',
+    'exp_month' => 10,
+    'cvc'       => 314,
+    'exp_year'  => 2020,
+    ]);
 ```
 
 1. __params__	
@@ -216,12 +216,12 @@ _Note: this method should only be used for testing purposes since its use in pro
 	_Note: if the array is not sent within the function a test token with test data is created_
 
 ``` php
-		$data =[
-			'number'    => '4242424242424242',
-			'exp_month' => 10,
-			'cvc'       => 314,
-			'exp_year'  => 2020,
-		]
+$data =[
+    'number'    => '4242424242424242',
+    'exp_month' => 10,
+    'cvc'       => 314,
+    'exp_year'  => 2020,
+    ]
 ```
 
 2. __return__ 
@@ -231,8 +231,8 @@ _Note: this method should only be used for testing purposes since its use in pro
 * __loadCharge__
 
 ``` php
-		$wallet = new WalletStripe;
-    	$customer = $wallet->loadCharge($account_id,$amount,$description,$metadata,$currency)
+$wallet = new WalletStripe;
+$customer = $wallet->loadCharge($account_id,$amount,$description,$metadata,$currency)
 ```
 
 1. __params__
